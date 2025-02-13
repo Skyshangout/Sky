@@ -33,28 +33,4 @@ body {
         left: calc(100% * var(--end-x));
         opacity: 0.5;
     }
-    .pink-button {
-  background-color: pink; /* Set the button color to pink */
-  color: white; /* Text color */
-  border: none; /* Remove any default border */
-  padding: 10px 20px; /* Add padding around the text */
-  border-radius: 12px; /* Round the corners */
-  font-size: 16px; /* Set the text size */
-  cursor: pointer; /* Change cursor on hover */
-  display: inline-block; /* Allow centering */
-  text-align: center; /* Align text in the center */
-  text-decoration: none; /* Remove underline from links */
-}
-
-.pink-button:hover {
-  background-color: hotpink; /* Change the button color on hover */
-}
-
-/* Center the button on the page */
-body {
-  display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-  height: 100vh; /* Full viewport height */
-  margin: 0; /* Remove default margin */
 }
