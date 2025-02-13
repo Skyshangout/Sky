@@ -1,1 +1,79 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skys Hangout Center</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .snow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .snowflake {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) scale(1);
+            }
+            100% {
+                transform: translateY(100vh) scale(0.5);
+            }
+        }
+
+        /* Randomize snowflakes animation */
+        .snowflake:nth-child(odd) {
+            animation-duration: 6s;
+            animation-delay: 0s;
+        }
+
+        .snowflake:nth-child(even) {
+            animation-duration: 8s;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="snow" id="snow"></div>
+
+    <script>
+        function createSnowflakes() {
+            const snowContainer = document.getElementById('snow');
+            const numberOfFlakes = 100;
+
+            for (let i = 0; i < numberOfFlakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.animationDuration = Math.random() * 5 + 5 + 's'; // Randomize falling speed
+                snowflake.style.animationDelay = Math.random() * 10 + 's'; // Randomize delay
+
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        createSnowflakes();
+    </script>
+</body>
+</html>
